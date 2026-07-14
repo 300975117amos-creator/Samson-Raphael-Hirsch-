@@ -23,5 +23,29 @@ All notable changes to this project. Dates in ISO 8601.
 - **Blocked:** full production pending human selection of a creative direction
   (R-D01).
 
-_No application code, tests, or measurements exist yet. No performance,
-accessibility, or test results are claimed for this iteration._
+### 2026-07-14 — M1 prototype (Direction B selected & built)
+- **Selected** Direction B ("Set in the Text") — project owner (DECISIONS D-006);
+  R-D01 resolved.
+- **Added** Next.js 15 (App Router) + TypeScript app. Content separated from
+  components: typed data in `src/content`, Zod schemas in `src/lib`, UI in
+  `src/components`.
+- **Added** source-first content model: schemas require a registered source +
+  claim type + verification status on every claim; a referential-integrity test
+  fails the build if any claim cites an unregistered source.
+- **Added** Direction B design system (black/white + one ink-vermilion accent; no
+  cliché palette), commentary-page grid, RTL via logical properties.
+- **Added** prototype experiences: homepage opening sequence (skippable,
+  reduced-motion aware, returning-visitor skip); sticky nav + chapter index +
+  motion toggle; typographic-ledger timeline with world filter (disputed dates
+  shown honestly); Living Text Hebrew↔German↔English morph (labeled renderings);
+  works library + commentary-layout work detail; concept explorer; citation/claim
+  components used throughout.
+- **Added** tests: `content.test.ts` (source-first invariants) and
+  `components.test.tsx` (labels, safe external links, axe smoke).
+- **Verified (real evidence):** `tsc` 0 errors; `vitest` 11/11 pass; `next build`
+  15/15 static pages, First Load JS 102–124 kB; 8 Chromium screenshots inspected
+  across desktop/mobile/reduced-motion.
+- **Deferred (honest):** archival-image interaction (image rights uncleared,
+  R-C03); licensed variable fonts (R-C05); MDX prose pipeline; in-browser axe +
+  Lighthouse (no CWV or WCAG-conformance claims made — see ACCESSIBILITY_LOG /
+  PERFORMANCE_BUDGET).

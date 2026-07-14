@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  border-block-end: 1px solid var(--hair);
+  position: sticky;
+  inset-block-start: 0;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.mark {
+  font-family: var(--hebrew);
+  font-size: 1.15rem;
+  color: var(--accent);
+}
+.name {
+  font-family: var(--sans);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  margin-inline-start: auto;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.2rem 0;
+  border-block-end: 2px solid transparent;
+}
+.link:hover {
+  color: var(--accent);
+}
+.link[aria-current="page"] {
+  border-block-end-color: var(--accent);
+}
+.chapter {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+}
+
+.motion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--hair);
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.motion:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}

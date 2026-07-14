@@ -40,10 +40,11 @@ Living risk register. Severity: **S1** critical (blocks launch / legal / trust),
 
 ## Accessibility
 
-- **R-A01 (S1, OPEN) — Motion-heavy concept vs WCAG 2.2.** The mandate for
-  cinematic/WebGL experiences risks reduced-motion, keyboard, and non-WebGL
-  failures. *Mitigation:* every experience ships with a designed reduced-motion
-  path, keyboard model, and non-WebGL fallback as acceptance criteria, not extras.
+- **R-A01 (S2, MITIGATING) — Motion vs WCAG 2.2.** Direction B uses no WebGL, which
+  removes the largest reduced-motion/non-WebGL risk. Reduced motion is implemented
+  as a designed mode + manual toggle (verified). *Remaining:* in-browser axe,
+  manual keyboard, and screen-reader audits not yet run (see ACCESSIBILITY_LOG) —
+  so this stays open until those pass, but severity is lowered.
 - **R-A02 (S2, OPEN) — RTL Hebrew parity.** Hebrew must not read as secondary;
   risk of LTR-first components breaking RTL. *Mitigation:* RTL in the architecture
   from day one; logical CSS properties; RTL in test matrix.
@@ -62,11 +63,22 @@ Living risk register. Severity: **S1** critical (blocks launch / legal / trust),
 
 ## Security / technical debt / process
 
-- **R-S01 (S2, OPEN) — No app scaffold yet.** Repo currently holds governance +
-  research docs only; no build/test harness. Not debt yet, but M1 must establish
-  tests before feature work.
-- **R-T01 (S3, OPEN) — Dependency creep** across animation libraries. *Mitigation:*
-  smallest reliable stack; every dep justified in `DECISIONS.md`.
+- **R-S01 (S2, RESOLVED) — App scaffold + test harness.** Next.js app scaffolded
+  with typecheck + Vitest (11 passing) + production build (15 pages) as of
+  2026-07-14. Playwright e2e + Lighthouse CI still to be added (tracked as next
+  tasks), but the "no harness" risk is resolved.
+- **R-T01 (S3, MITIGATING) — Dependency creep.** Prototype uses a deliberately
+  small stack (next, react, zod; dev: vitest/testing-library/axe/playwright). No
+  animation library added yet (type motion is CSS/WAAPI). GSAP only if a scene
+  needs it (D-007).
+- **R-A04 (S3, OPEN) — jsdom axe is a smoke test only.** Color-contrast and full
+  ruleset are NOT covered in jsdom. *Mitigation:* run axe in Chromium via
+  Playwright before any accessibility conformance claim.
+- **R-C05 (S3, OPEN) — Font licensing.** Prototype ships system fonts only (safe).
+  Any licensed/variable family must be recorded in the copyright ledger before use.
+- **R-P03 (S3, OPEN) — Lab performance unmeasured.** Bundle budget is measured and
+  within target, but Core Web Vitals under throttling are not. No CWV claim until
+  measured.
 
 ## Editorial / theological / product
 
@@ -79,6 +91,7 @@ Living risk register. Severity: **S1** critical (blocks launch / legal / trust),
 
 ## Unresolved human decisions
 
-- **R-D01 (S1, OPEN) — Creative direction not selected.** Full production is
-  blocked until a human selects one of the three directions in
-  `CREATIVE_DIRECTIONS.md`.
+- **R-D01 (S1, RESOLVED) — Creative direction.** Direction B selected by the
+  project owner on 2026-07-14 (DECISIONS D-006). M1 prototype built.
+- **R-D02 (S2, OPEN) — M1 approval pending.** Proceeding to full launch pages (M2)
+  awaits human sign-off on the prototype's direction execution.

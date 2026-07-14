@@ -28,5 +28,25 @@ reader review (NVDA/VoiceOver), contrast tooling. Automated tools catch ~a third
 of issues — manual + AT review are required, not optional.
 
 ## Audit records
-_None yet._ Each future entry: date · page/component · tool · findings · fixes ·
-retest result.
+
+### 2026-07-14 — M1 prototype (partial, honest scope)
+- **Automated (jsdom smoke):** `axe-core` run in the component test on
+  `CitationList` → **0 serious/critical violations**. NOTE: jsdom cannot run the
+  color-contrast rule (no canvas), so this is a *smoke test only*, not a contrast
+  audit.
+- **Built-in by design (verified via code + screenshots, not yet AT-tested):**
+  skip link to `#main`; visible `:focus-visible` rings (confirmed on Enter button
+  and links in screenshots); semantic single `h1` per page + ordered headings;
+  status conveyed by text + shape, never color alone (`ClaimBadge`); keyboard-
+  operable radio filter (timeline) and button-list explorer (concepts);
+  reduced-motion as a designed mode (verified: content fully present, Enter
+  focused) + manual toggle persisted; correct `lang`/`dir` on Hebrew/German text;
+  RTL via logical properties; external links carry `rel="noopener"`.
+- **Responsive:** verified at 1280px and 390px; no horizontal overflow observed.
+
+### Not yet done (top accessibility tasks)
+- In-browser `axe` run (real color-contrast + full ruleset) via Playwright.
+- Manual keyboard walkthrough of every interactive element and focus order.
+- Screen-reader pass (NVDA/VoiceOver), incl. language-switch announcements.
+- Zoom-to-200% reflow check. Contrast ratios measured against tokens.
+No WCAG conformance is claimed until these run.
