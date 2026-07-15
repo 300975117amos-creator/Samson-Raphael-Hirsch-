@@ -1,0 +1,85 @@
+.hero {
+  max-inline-size: 72ch;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 2rem;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.statement {
+  margin: 0;
+  font-size: clamp(1.15rem, 1rem + 1vw, 1.5rem);
+  line-height: 1.5;
+  max-inline-size: 46ch;
+}
+
+.note {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  max-inline-size: 52ch;
+}
+
+.enter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-block-start: 0.6rem;
+}
+.cta {
+  font-family: var(--sans);
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 0.7rem 1.3rem;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.cta:hover {
+  color: var(--accent-ink);
+  filter: brightness(1.08);
+}
+.ctaGhost {
+  font-family: var(--sans);
+  padding: 0.7rem 1.3rem;
+  border: 1px solid var(--hair);
+  border-radius: 2px;
+  text-decoration: none;
+}
+.ctaGhost:hover {
+  border-color: var(--accent);
+}
+
+.chapters {
+  padding-block: 2.5rem 1rem;
+  border-block-start: 1px solid var(--hair);
+}
+.chapterList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+.chapterLink {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-block-end: 1px solid var(--hair);
+  text-decoration: none;
+  transition: padding-inline-start var(--dur-base) var(--ease);
+}
+.chapterLink:hover {
+  padding-inline-start: 0.6rem;
+  color: var(--accent);
+}
+.chapterNum {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.chapterLabel {
+  font-family: var(--sans);
+  font-size: clamp(1.1rem, 0.9rem + 1.4vw, 1.9rem);
+  font-weight: 600;
+}

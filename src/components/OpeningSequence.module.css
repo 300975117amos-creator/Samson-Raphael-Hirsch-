@@ -1,0 +1,118 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.skip {
+  position: absolute;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--hair);
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+.skip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.stage {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.caret {
+  inline-size: 0.55rem;
+  block-size: 1.8rem;
+  background: var(--accent);
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.line {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 650;
+  font-size: clamp(2rem, 1rem + 6vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: rise var(--dur-cinematic) var(--ease) forwards;
+}
+.he {
+  font-family: var(--hebrew);
+  font-weight: 600;
+  animation-delay: 250ms;
+}
+.line:not(.he) {
+  animation-delay: 700ms;
+}
+
+.tagline {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  animation: rise var(--dur-slow) var(--ease) 1200ms forwards;
+}
+
+.enter {
+  margin-block-start: 1.4rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0;
+  animation: rise var(--dur-base) var(--ease) 1600ms forwards;
+}
+.enter:hover {
+  filter: brightness(1.08);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Reduced motion: everything visible immediately, no staging, no blink. */
+.overlay[data-reduced="true"] .line,
+.overlay[data-reduced="true"] .tagline,
+.overlay[data-reduced="true"] .enter {
+  opacity: 1;
+  animation: none;
+}
+.overlay[data-reduced="true"] .caret {
+  animation: none;
+}

@@ -1,0 +1,92 @@
+.wrap {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.legend {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0;
+}
+.option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.option[data-active="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.ledger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  padding-block: 1.6rem;
+  border-block-start: 1px solid var(--hair);
+  transition: transform var(--dur-base) var(--ease);
+}
+@media (min-width: 48rem) {
+  .entry {
+    grid-template-columns: minmax(7rem, 10rem) 1fr;
+    gap: 1.6rem;
+  }
+}
+
+.year {
+  position: sticky;
+  inset-block-start: 5rem;
+  align-self: start;
+}
+.yearFig {
+  font-family: var(--sans);
+  font-weight: 650;
+  font-size: clamp(1.4rem, 1rem + 2vw, 2.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.title {
+  margin: 0 0 0.3rem;
+  font-size: 1.2rem;
+}
+.place {
+  color: var(--muted);
+  font-weight: 400;
+}
+.desc {
+  margin: 0 0 0.7rem;
+  max-inline-size: 60ch;
+}
+
+.entry[data-world="torah"] .yearFig {
+  color: var(--on-surface);
+}
+.entry[data-world="world"] .yearFig {
+  color: var(--muted);
+}
