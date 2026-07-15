@@ -12,8 +12,18 @@ import styles from "./ConceptExplorer.module.css";
  * related terms. This IS the accessible alternative — no separate node-graph
  * fallback is needed because the primary form is already list/text based.
  */
-export function ConceptExplorer({ concepts }: { concepts: Concept[] }) {
-  const [activeId, setActiveId] = useState(concepts[0]?.id ?? "");
+export function ConceptExplorer({
+  concepts,
+  activeId: controlledId,
+  onSelect,
+}: {
+  concepts: Concept[];
+  activeId?: string;
+  onSelect?: (id: string) => void;
+}) {
+  const [internalId, setInternalId] = useState(concepts[0]?.id ?? "");
+  const activeId = controlledId ?? internalId;
+  const setActiveId = onSelect ?? setInternalId;
   const active = concepts.find((c) => c.id === activeId) ?? concepts[0];
   const byId = (id: string) => concepts.find((c) => c.id === id);
 

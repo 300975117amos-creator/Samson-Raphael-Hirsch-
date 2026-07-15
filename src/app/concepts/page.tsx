@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { concepts } from "@/content/concepts";
 import { morphById } from "@/content/living-text";
-import { ConceptExplorer } from "@/components/ConceptExplorer";
+import { ConceptsExperience } from "@/components/ConceptsExperience";
 import { LivingText } from "@/components/LivingText";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function ConceptsPage() {
       </div>
 
       <div className="reading" style={{ maxInlineSize: "78ch", marginBlockStart: "1rem" }}>
-        <ConceptExplorer concepts={concepts} />
+        <ConceptsExperience concepts={concepts} />
       </div>
     </div>
   );

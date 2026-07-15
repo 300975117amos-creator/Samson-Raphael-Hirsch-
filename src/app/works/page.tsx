@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { works } from "@/content/works";
 import { ClaimBadge } from "@/components/ClaimBadge";
+import { WorksChart } from "@/components/WorksChart";
 import styles from "./works.module.css";
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export default function WorksPage() {
         note describes the <em>original</em> text only; modern translations are
         separate objects and are not cleared for full text here.
       </p>
+
+      <WorksChart works={works} />
 
       <ul className={styles.list}>
         {works.map((w) => (

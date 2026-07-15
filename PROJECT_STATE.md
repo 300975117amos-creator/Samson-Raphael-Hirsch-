@@ -44,6 +44,14 @@ real test/build harness. Then obtain human approval to proceed toward M2.
   status conveyed by text+shape (not color alone), keyboard-operable filters/
   explorer, reduced-motion as a designed mode + manual toggle, correct `lang`/`dir`.
 
+### M1 visual systems (2026-07-15)
+- Added original, copyright-safe visuals: schematic **journey map**, **publication
+  infographic** (with data table), interactive **concept network** (shares
+  selection with the accessible explorer), ambient **generative-typography** hero
+  backdrop, and **stat tiles**. Each ships a text/list/table equivalent and is
+  reduced-motion aware. Verified: `tsc` 0, `vitest` 12/12, `next build` 15/15,
+  screenshots reviewed. No stock/archival photos (image rights uncleared, R-C03).
+
 ## Active task
 Await human review/approval of the M1 prototype direction execution before
 expanding to full launch pages (M2). Meanwhile, next unblocked engineering tasks

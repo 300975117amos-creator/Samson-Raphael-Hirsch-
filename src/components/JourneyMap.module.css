@@ -1,0 +1,137 @@
+.figure {
+  margin: 0;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.mapWrap {
+  border: 1px solid var(--hair);
+  background: color-mix(in srgb, var(--surface) 100%, transparent);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+.grid line {
+  stroke: var(--hair);
+  stroke-width: 0.15;
+}
+
+.route {
+  stroke: var(--accent);
+  stroke-width: 0.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: draw 2.6s var(--ease) forwards;
+}
+.routeStatic {
+  stroke-dashoffset: 0;
+  animation: none;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.node {
+  cursor: default;
+}
+.halo {
+  fill: color-mix(in srgb, var(--accent) 18%, transparent);
+  transition: r var(--dur-fast) var(--ease);
+}
+.dot {
+  fill: var(--on-surface);
+  transition: r var(--dur-fast) var(--ease);
+}
+.node[data-active="true"] .dot {
+  fill: var(--accent);
+}
+.city {
+  font-family: var(--sans);
+  font-size: 2.4px;
+  font-weight: 600;
+  fill: var(--on-surface);
+}
+.yr {
+  font-family: var(--mono);
+  font-size: 1.9px;
+  fill: var(--muted);
+}
+
+.caption {
+  font-size: 0.78rem;
+  color: var(--muted);
+  max-inline-size: 62ch;
+  line-height: 1.45;
+}
+
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.2rem;
+  counter-reset: post;
+}
+.legendItem {
+  inline-size: 100%;
+  text-align: start;
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  grid-template-areas: "year city" "year role";
+  gap: 0 1rem;
+  background: transparent;
+  border: none;
+  border-inline-start: 2px solid var(--hair);
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+}
+.legendItem[data-active="true"] {
+  border-inline-start-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+.legendYear {
+  grid-area: year;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  align-self: center;
+}
+.legendCity {
+  grid-area: city;
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.legendRegion {
+  font-weight: 400;
+  color: var(--muted);
+}
+.legendRole {
+  grid-area: role;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@media (min-width: 40rem) {
+  .legend {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 1.5rem;
+  }
+}

@@ -1,0 +1,46 @@
+.field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  /* fade the field toward the edges so it never competes with the text */
+  -webkit-mask-image: radial-gradient(120% 90% at 50% 40%, #000 40%, transparent 92%);
+  mask-image: radial-gradient(120% 90% at 50% 40%, #000 40%, transparent 92%);
+}
+
+.frag {
+  position: absolute;
+  font-family: var(--sans);
+  font-weight: 650;
+  color: var(--on-surface);
+  transform: rotate(var(--rot));
+  will-change: transform;
+  animation-name: drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  user-select: none;
+}
+.he {
+  font-family: var(--hebrew);
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0) rotate(var(--rot));
+  }
+  to {
+    transform: translateY(-14px) rotate(var(--rot));
+  }
+}
+
+/* Reduced motion: hold still (both media query and manual toggle). */
+@media (prefers-reduced-motion: reduce) {
+  .frag {
+    animation: none;
+  }
+}
+:global(:root[data-motion="reduced"]) .frag {
+  animation: none;
+}

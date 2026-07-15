@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { timeline } from "@/content/timeline";
 import { TimelineView } from "@/components/TimelineView";
+import { JourneyMap } from "@/components/JourneyMap";
 
 export const metadata: Metadata = {
   title: "Life & Timeline",
@@ -18,7 +19,17 @@ export default function TimelinePage() {
         of his death, the year of <em>Horeb</em>, the run of <em>Jeschurun</em> —
         the entry says so rather than choosing for you.
       </p>
-      <div style={{ marginBlockStart: "2rem" }}>
+      <section
+        aria-labelledby="journey-h"
+        style={{ marginBlockStart: "2.5rem" }}
+      >
+        <h2 id="journey-h" style={{ fontSize: "1.1rem" }}>
+          A life across the German lands
+        </h2>
+        <JourneyMap />
+      </section>
+
+      <div style={{ marginBlockStart: "3rem" }}>
         <TimelineView events={timeline} />
       </div>
     </div>

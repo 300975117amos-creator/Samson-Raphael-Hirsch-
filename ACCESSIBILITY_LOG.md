@@ -44,6 +44,19 @@ of issues — manual + AT review are required, not optional.
   RTL via logical properties; external links carry `rel="noopener"`.
 - **Responsive:** verified at 1280px and 390px; no horizontal overflow observed.
 
+### 2026-07-15 — Visual systems accessibility (by design)
+- **JourneyMap:** SVG has `role="img"` + descriptive `aria-label`; the same data is
+  also an interactive **ordered list** (the primary control); hovering/focusing a
+  list item highlights the map node; an `aria-live` region announces selection.
+- **WorksChart:** SVG labeled; an always-present **data table** (in `<details>`)
+  gives non-visual access; readout region is `aria-live`.
+- **ConceptConstellation:** nodes are keyboard-focusable (`tabIndex`, Enter/Space)
+  and mirror the accessible explorer list; decorative circles set
+  `pointer-events:none` so the hit target and keyboard both work.
+- **GenerativeType:** `aria-hidden` decorative; low opacity + edge mask so it never
+  reduces readability; static under reduced motion.
+- Status/identity never by color alone (shape + text throughout).
+
 ### Not yet done (top accessibility tasks)
 - In-browser `axe` run (real color-contrast + full ruleset) via Playwright.
 - Manual keyboard walkthrough of every interactive element and focus order.

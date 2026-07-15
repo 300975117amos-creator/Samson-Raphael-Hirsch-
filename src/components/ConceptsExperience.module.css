@@ -1,0 +1,7 @@
+.wrap {
+  display: grid;
+  gap: 2rem;
+}
+.map {
+  max-inline-size: 46rem;
+}

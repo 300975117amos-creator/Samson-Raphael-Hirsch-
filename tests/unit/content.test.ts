@@ -3,6 +3,7 @@ import { timeline } from "@/content/timeline";
 import { works } from "@/content/works";
 import { concepts } from "@/content/concepts";
 import { morphPhrases } from "@/content/living-text";
+import { journey } from "@/content/geo";
 import { sources, sourceById } from "@/content/sources";
 
 /**
@@ -46,6 +47,15 @@ describe("referential integrity: every claim cites a registered source", () => {
           sourceById(ref.id),
           `${item.kind}:${item.id} → unknown source ${ref.id}`,
         ).toBeDefined();
+      }
+    }
+  });
+
+  it("map (journey) places cite only registered sources", () => {
+    for (const place of journey) {
+      expect(place.sources.length, `place ${place.id}`).toBeGreaterThan(0);
+      for (const id of place.sources) {
+        expect(sourceById(id), `place ${place.id} → unknown ${id}`).toBeDefined();
       }
     }
   });

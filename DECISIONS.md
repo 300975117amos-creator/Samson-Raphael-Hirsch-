@@ -61,6 +61,23 @@ alternatives · risks · responsible.
 - **Alternatives:** Astro (rejected — team familiarity + React motion ecosystem);
   GSAP-everywhere (deferred — start with platform APIs, add GSAP only where needed).
 
+### D-009 — Original visuals instead of stock/archival imagery
+- **Date:** 2026-07-15 · **Responsible:** Agent (creative director + engineering)
+- **Decision:** Deliver "images, infographics, maps" as **hand-authored SVG/CSS**
+  (map, publication chart, concept network, generative typography, stat tiles)
+  rather than photographs or archival scans.
+- **Reason:** (a) Copyright — archival portraits/scans are uncleared (R-C03) and a
+  PD status + provenance must be verified per image before use; original artwork
+  carries no rights risk. (b) Fit — generative letterforms and type-driven
+  infographics embody "A World Built From Words" and Direction B better than stock
+  imagery. (c) Performance/accessibility — SVG is light (no WebGL) and every visual
+  ships a text/list/table equivalent.
+- **Alternatives:** Pull a portrait/engraving from Commons/LBI now (rejected —
+  needs verified PD + provenance first; fetcher blocked, R-H06). Buy stock imagery
+  (rejected — off-concept and off-brief).
+- **Follow-up:** A verified public-domain portrait can be added later with a
+  `COPYRIGHT_LEDGER` entry; the layout has honest slots for it.
+
 ### D-008 — M1 prototype scope decisions
 - **Date:** 2026-07-14 · **Responsible:** Agent (technical director)
 - **Decisions & reasons:**

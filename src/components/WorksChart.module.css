@@ -1,0 +1,102 @@
+.wrap {
+  display: grid;
+  gap: 0.8rem;
+  margin-block: 1.5rem;
+}
+
+.plot {
+  position: relative;
+}
+.svg {
+  inline-size: 100%;
+  block-size: clamp(6rem, 16vw, 9rem);
+  display: block;
+  overflow: visible;
+}
+
+.axis {
+  stroke: var(--on-surface);
+  stroke-width: 0.2;
+  vector-effect: non-scaling-stroke;
+}
+.tick {
+  stroke: var(--muted);
+  stroke-width: 0.2;
+  vector-effect: non-scaling-stroke;
+}
+.stem {
+  stroke: var(--hair);
+  stroke-width: 0.3;
+  vector-effect: non-scaling-stroke;
+}
+.mark {
+  cursor: default;
+}
+.dot {
+  fill: var(--on-surface);
+  transition: r var(--dur-fast) var(--ease);
+}
+.mark[data-active="true"] .dot {
+  fill: var(--accent);
+}
+.mark[data-active="true"] .stem {
+  stroke: var(--accent);
+}
+
+.axisLabels {
+  position: relative;
+  block-size: 1.2rem;
+  margin-block-start: 0.2rem;
+}
+.axisLabels span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+.readout {
+  min-block-size: 1.4rem;
+  margin: 0;
+  font-size: 0.92rem;
+}
+.hint {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tableWrap {
+  border-block-start: 1px solid var(--hair);
+  padding-block-start: 0.6rem;
+}
+.tableWrap summary {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+}
+.table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  margin-block-start: 0.8rem;
+  font-size: 0.85rem;
+}
+.table th,
+.table td {
+  text-align: start;
+  padding: 0.4rem 0.6rem;
+  border-block-end: 1px solid var(--hair);
+}
+.table thead th {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}

@@ -1,0 +1,62 @@
+.svg {
+  inline-size: 100%;
+  block-size: auto;
+  display: block;
+  border: 1px solid var(--hair);
+  border-radius: 4px;
+  padding: 0.5rem;
+  background: color-mix(in srgb, var(--accent) 2%, var(--surface));
+}
+
+.edge {
+  stroke: var(--hair);
+  stroke-width: 0.3;
+  vector-effect: non-scaling-stroke;
+}
+.edgeLit {
+  stroke: var(--accent);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+  transition: stroke var(--dur-fast) var(--ease);
+}
+
+.node {
+  cursor: pointer;
+}
+.halo {
+  fill: color-mix(in srgb, var(--accent) 14%, transparent);
+  transition: r var(--dur-base) var(--ease);
+  pointer-events: none;
+}
+.hit {
+  fill: transparent;
+}
+.hit:focus-visible {
+  outline: none;
+}
+.node:has(.hit:focus-visible) .halo {
+  fill: color-mix(in srgb, var(--accent) 22%, transparent);
+  r: 6.5;
+}
+.dot {
+  fill: var(--on-surface);
+  transition: fill var(--dur-fast) var(--ease);
+  pointer-events: none;
+}
+.node[data-active="true"] .dot {
+  fill: var(--accent);
+}
+.node[data-related="true"] .dot {
+  fill: var(--accent);
+  opacity: 0.6;
+}
+.label {
+  font-family: var(--sans);
+  font-size: 2.5px;
+  font-weight: 600;
+  fill: var(--on-surface);
+  pointer-events: none;
+}
+.node[data-active="true"] .label {
+  fill: var(--accent);
+}

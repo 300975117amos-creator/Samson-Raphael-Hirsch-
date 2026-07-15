@@ -4,6 +4,29 @@ All notable changes to this project. Dates in ISO 8601.
 
 ## [Unreleased]
 
+### 2026-07-15 — Original visual systems (infographics, map, network, generative type)
+- **Added** copyright-safe, hand-authored visuals (no stock/archival photos; image
+  rights remain uncleared, R-C03):
+  - `JourneyMap` — schematic SVG map of Hirsch's rabbinic posts (Hamburg →
+    Oldenburg → Emden → Nikolsburg → Frankfurt), animated route, honest
+    "schematic / approximate years" caption, with an accessible ordered-list
+    companion carrying the same data. New verified `src/content/geo.ts`.
+  - `WorksChart` — publication-timeline infographic with an always-present data
+    table for non-visual access.
+  - `ConceptConstellation` + `ConceptsExperience` — an interactive SVG concept
+    network sharing one selection with the accessible explorer list; short graph
+    labels, keyboard-operable nodes.
+  - `GenerativeType` — ambient "world built from words" backdrop of Hebrew/German/
+    English letterforms and verified tokens; low-opacity, edge-masked, holds still
+    under reduced motion; deterministic layout (no hydration mismatch).
+  - `StatTiles` — "at a glance" figures, each verifiable and labeled.
+- **Fixed** constellation node click target (decorative circles no longer
+  intercept pointer events); **fixed** graph label overflow (short labels).
+- **Extended** the source-integrity test to cover the new map data (now 12/12).
+- **Verified:** `tsc` 0 errors · `vitest` 12/12 · `next build` 15/15 pages, First
+  Load JS 124 kB home / 107 kB others (SVG adds ~1 kB) · screenshots reviewed
+  (home, timeline map, works chart, concept network, reduced-motion).
+
 ### 2026-07-14 — M0 foundation
 - **Added** repository governance & operating docs: `CLAUDE.md`,
   `PROJECT_BRIEF.md`, `EDITORIAL_POLICY.md`.
