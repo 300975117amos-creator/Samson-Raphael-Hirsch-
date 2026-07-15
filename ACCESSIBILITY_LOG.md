@@ -55,6 +55,9 @@ of issues — manual + AT review are required, not optional.
   `pointer-events:none` so the hit target and keyboard both work.
 - **GenerativeType:** `aria-hidden` decorative; low opacity + edge mask so it never
   reduces readability; static under reduced motion.
+- **TypographicPortrait:** SVG `role="img"` with a full `aria-label` describing the
+  plate and stating it is not a photograph; decorative word-texture is
+  `aria-hidden`; a visible caption repeats the "not a photograph" disclosure.
 - Status/identity never by color alone (shape + text throughout).
 
 ### Not yet done (top accessibility tasks)

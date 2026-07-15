@@ -1,0 +1,106 @@
+.figure {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.svg {
+  inline-size: 100%;
+  max-inline-size: 340px;
+  block-size: auto;
+  display: block;
+}
+
+.texture {
+  opacity: 0.06;
+}
+.textureRow {
+  font-family: var(--hebrew);
+  font-size: 15px;
+  fill: var(--on-surface);
+  letter-spacing: 0.5px;
+}
+
+.frameOuter {
+  stroke: var(--on-surface);
+  stroke-width: 1.4;
+}
+.frameInner {
+  stroke: var(--hair);
+  stroke-width: 1;
+}
+.flourish path {
+  stroke: var(--accent);
+  stroke-width: 1.4;
+}
+
+.heName {
+  font-family: var(--hebrew);
+  font-size: 40px;
+  font-weight: 600;
+  fill: var(--on-surface);
+  animation: tpRise 900ms var(--ease) both;
+}
+.latinName {
+  font-family: var(--sans);
+  font-size: 25px;
+  font-weight: 650;
+  letter-spacing: 3px;
+  fill: var(--on-surface);
+  animation: tpRise 900ms var(--ease) 120ms both;
+}
+.dates {
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: 2px;
+  fill: var(--muted);
+  animation: tpRise 900ms var(--ease) 220ms both;
+}
+.posts {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.3px;
+  fill: var(--muted);
+  text-transform: uppercase;
+}
+.motto {
+  font-family: var(--hebrew);
+  font-size: 22px;
+  fill: var(--accent);
+  animation: tpRise 900ms var(--ease) 320ms both;
+}
+
+.rule {
+  stroke: var(--hair);
+  stroke-width: 1;
+}
+
+@keyframes tpRise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.caption {
+  font-size: 0.8rem;
+  color: var(--muted);
+  max-inline-size: 46ch;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Reduced motion: no entrance animation (global rules also neutralize it). */
+@media (prefers-reduced-motion: reduce) {
+  .heName,
+  .latinName,
+  .dates,
+  .motto {
+    animation: none;
+  }
+}

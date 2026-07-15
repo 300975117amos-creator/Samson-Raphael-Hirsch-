@@ -32,7 +32,11 @@ cleared / do not publish · ⛔ blocked pending human/legal decision.
 - **Permitted use:** 🔴 **do not quote or publish until the exact edition, year,
   and translator are confirmed.** A later edition (e.g., Feldheim/Elias 1995) is
   fully in copyright.
-- **Review status:** ⛔ pending edition confirmation.
+- **New lead (2026-07-15):** *The Nineteen Letters* (Drachman, 1899) is held on
+  Wikimedia Commons as a PDF (SRC-017). A 1899 US publication is public domain
+  (pre-1929), which would clear the Drachman text — but the specific Commons file
+  must still be opened and confirmed (Commons is currently network-blocked).
+- **Review status:** ⛔ pending edition confirmation (lead strengthened).
 
 ### AST-003 — *Horeb* — English translation (I. Grunfeld, Soncino Press)
 - **Creator:** S. R. Hirsch · **Translator:** Isidore (Dayan I.) Grunfeld
@@ -69,13 +73,33 @@ cleared / do not publish · ⛔ blocked pending human/legal decision.
 - **Copyright status:** 🟢 PD for issues within Hirsch's lifetime; later issues
   by other hands are separate. · **Review status:** 🟡
 
-### AST-020 — Portrait of Rabbi S. R. Hirsch (LBI Griffinger, SRC-005)
-- **Creator:** unknown (to research) · **Date:** unknown (to research)
-- **Holding institution:** Leo Baeck Institute · **Source link:** SRC-005 URL
-- **License / rights:** **NOT determined.** Many LBI portal images carry specific
-  reuse terms.
-- **Permitted use:** 🔴 do not display until LBI rights/terms are read and recorded.
-- **Attribution requirement:** per LBI terms (to record). · **Review status:** ⛔
+### AST-020 — Portrait of Rabbi S. R. Hirsch (candidates identified)
+- **Candidate A — Lithograph by E. Schier, [1847?]** (SRC-016, LBI record 356893).
+  A work created in 1847; **very likely public domain by age**, but this is **not
+  yet verified**: the specific file's license and the artist's death date have not
+  been confirmed (the fetch is blocked by network policy — R-H06).
+- **Candidate B — Wikimedia Commons category** (SRC-017): several likenesses with
+  per-file license tags; **cannot read the license or download from this
+  environment** (Commons is network-blocked).
+- **Creator/Date/Holder:** as per candidate (to finalize). 
+- **Permitted use:** 🔴 **Do not display any photographic/archival likeness until a
+  specific file's public-domain status + provenance are verified and the file is
+  obtained.** No unverified image ships.
+- **Unblock paths:** (a) user adds the specific Commons/LBI file to `public/` and
+  confirms its license; (b) network policy is updated to allow commons.wikimedia.org
+  so the license can be read and the file downloaded; (c) user uploads the file.
+- **Interim:** the site uses an **original typographic portrait plate** (AST-021),
+  clearly labeled as *not a photograph*. · **Review status:** ⛔ (photo) pending.
+
+### AST-021 — Original typographic portrait plate (this project's own artwork)
+- **Creator:** this project (original SVG/CSS composition). · **Date:** 2026-07-15
+- **Content:** Rabbi Hirsch's name (Hebrew/Latin), dates, posts, and the phrase
+  *Torah im Derech Eretz* arranged as an engraving-style plate. Contains **no
+  photograph and no third-party image.**
+- **Copyright status:** 🟢 owned by this project. **Permitted use:** free to display.
+- **Labeling requirement:** must be labeled "typographic portrait — not a
+  photograph" wherever shown, so it is never mistaken for an archival likeness.
+- **Review status:** 🟢
 
 ---
 

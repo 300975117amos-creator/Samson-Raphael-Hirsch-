@@ -97,6 +97,27 @@ this project's editorial rating, not the source's self-description.
 - **Reliability:** Medium–High as a finding aid; confirm each text's license on
   Sefaria individually (licenses vary per text). · **Status:** 🟡
 
+### SRC-016 — Lithograph portrait (E. Schier, 1847) — LBI record 356893
+- **Institution:** Leo Baeck Institute (Griffinger Portal) · **Type:** Archival image record
+- **Creator (stated):** E. Schier · **Date:** [1847?] · **Language:** — 
+- **URL:** https://www.lbi.org/griffinger/record/356893
+- **Reliability:** High (recognized archive). · **Note:** captioned "k.k. Mährisch
+  & Schlesischer Landes Ober Rabiner" — consistent with his Moravia post (c. 1847).
+- **Copyright:** likely public domain (creator's 1847 work) **but the specific
+  file's license and Schier's death date are UNVERIFIED** (network policy blocks
+  the fetch). See ledger AST-020. · **Date accessed:** 2026-07-15 · **Status:** 🟡
+
+### SRC-017 — Wikimedia Commons, Category: Samson Raphael Hirsch
+- **Institution:** Wikimedia Commons · **Type:** Media repository (per-file licenses)
+- **URL:** https://commons.wikimedia.org/wiki/Category:Samson_Raphael_Hirsch
+- **Reliability:** High as a license-tagged source; confirm each file individually.
+- **Note:** Also holds *The Nineteen Letters* (Drachman, 1899) as a PDF —
+  strengthens the public-domain (pre-1929, US) case for that translation (AST-002),
+  pending confirmation of the exact scan/edition.
+- **Access:** **BLOCKED from this environment** (network policy denies
+  commons.wikimedia.org — see RISKS R-H06). Cannot read the per-file license or
+  download here. · **Date accessed:** 2026-07-15 · **Status:** 🟡
+
 ### SRC-015 — Online Books Page (U. Penn): Hirsch author listing
 - **Institution:** University of Pennsylvania Libraries · **Type:** Bibliographic finding aid
 - **URL:** https://onlinebooks.library.upenn.edu/webbin/book/lookupname?key=Hirsch,+Samson+Raphael,+1808-1888

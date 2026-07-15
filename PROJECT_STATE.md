@@ -60,8 +60,13 @@ are queued below.
 ## Blockers / required human decisions
 - **Approve M1 prototype** to proceed toward M2 (Creative Prototype Milestone
   sign-off).
-- **Portrait/archival image rights (R-C03/AST-020):** provide or approve a
-  rights-cleared image before any archival-image interaction is built.
+- **Portrait/archival image rights (R-C03/AST-020):** candidates identified
+  (E. Schier 1847 lithograph via LBI; Wikimedia Commons), but the network policy
+  blocks Commons/Wikipedia/archive.org, so the license can't be verified and the
+  file can't be downloaded here. Interim: an original typographic portrait plate
+  (AST-021) ships, clearly labeled "not a photograph." To add a real likeness:
+  allow commons.wikimedia.org in the network policy, or add the rights-cleared file
+  to `public/`.
 - **Font licensing:** approve an OFL variable-font family (e.g. for true
   variable-axis morphing) to record in the copyright ledger; prototype currently
   ships only system fonts (no unlicensed fonts).

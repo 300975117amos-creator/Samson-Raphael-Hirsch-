@@ -4,6 +4,24 @@ All notable changes to this project. Dates in ISO 8601.
 
 ## [Unreleased]
 
+### 2026-07-15 — Portrait research + original typographic portrait plate
+- **Researched** a public-domain portrait: identified real candidates — an
+  **E. Schier lithograph (1847)** via Leo Baeck Institute (SRC-016) and the
+  **Wikimedia Commons category** (SRC-017), which also holds the Drachman 1899
+  *Nineteen Letters* (strengthens that translation's public-domain case).
+- **Blocked:** this environment's network policy denies commons.wikimedia.org /
+  wikipedia / archive.org (verified at the proxy: `connect_rejected 403`), so the
+  specific file's license could not be read and the image could not be downloaded.
+  Per editorial policy, **no unverified image is published.** Leads recorded in
+  `SOURCE_REGISTRY.md` / `COPYRIGHT_LEDGER.md` (AST-020) with unblock paths.
+- **Added** `TypographicPortrait` (AST-021) — an ORIGINAL engraving-style portrait
+  plate built from Hirsch's name (Hebrew/Latin), dates, posts, and the motto
+  *Torah im Derech Eretz*. No photograph, no third-party image; always labeled
+  "typographic portrait — not a photograph." Realizes the brief's "portrait through
+  typographic masks" idea with zero rights risk. Placed on the "Who" page.
+- **Verified:** `tsc` 0 · `vitest` 12/12 · `next build` 15/15 · screenshot reviewed
+  (posts line fitted within the frame after a fix).
+
 ### 2026-07-15 — Original visual systems (infographics, map, network, generative type)
 - **Added** copyright-safe, hand-authored visuals (no stock/archival photos; image
   rights remain uncleared, R-C03):

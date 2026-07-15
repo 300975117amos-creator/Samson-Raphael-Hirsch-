@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ClaimBadge } from "@/components/ClaimBadge";
 import { CitationList } from "@/components/CitationList";
+import { TypographicPortrait } from "@/components/TypographicPortrait";
 
 export const metadata: Metadata = {
   title: "Who Was Rabbi Samson Raphael Hirsch?",
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
 export default function WhoPage() {
   return (
     <article className="page">
+      <div className="reading" style={{ marginBlockEnd: "3rem" }}>
+        <TypographicPortrait />
+      </div>
+
       <div className="commentary">
         <div className="margin-start">
           <p>1808–1888</p>
