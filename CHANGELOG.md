@@ -4,6 +4,23 @@ All notable changes to this project. Dates in ISO 8601.
 
 ## [Unreleased]
 
+### 2026-07-15 — Measured accessibility & performance (real audits)
+- **Added** `scripts/a11y-audit.mjs` — in-browser **axe-core** audit across 7
+  routes (WCAG 2a/2aa/21a/21aa, full ruleset incl. color-contrast). `npm run
+  audit:a11y`.
+- **Result: 0 violations across all routes** after fixing two real issues the
+  audit found:
+  - decorative word-field re-rendered as an SVG `role="presentation"` (its faint
+    text was being scored by the HTML color-contrast rule) — the field now also
+    covers more area and animates as one cheap group drift;
+  - `StatTiles` `<dl>` restructured so each group holds only `<dt>`/`<dd>`.
+- **Measured Lighthouse** (12.2.1, default mobile throttling) on the production
+  build: home **Perf 98 / A11y 100 / Best-Practices 96 / SEO 100** (LCP 2.1 s,
+  CLS 0, FCP 0.9 s); timeline **Perf 100 / A11y 100 / SEO 100** (LCP 1.9 s, CLS 0).
+  Recorded in `PERFORMANCE_BUDGET.md` and `ACCESSIBILITY_LOG.md`.
+- Note: the network policy still blocks Wikimedia/archive.org, so a verified
+  photographic portrait remains pending (the original typographic plate stands in).
+
 ### 2026-07-15 — Portrait research + original typographic portrait plate
 - **Researched** a public-domain portrait: identified real candidates — an
   **E. Schier lithograph (1847)** via Leo Baeck Institute (SRC-016) and the

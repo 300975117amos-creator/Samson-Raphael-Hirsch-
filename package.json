@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "audit:a11y": "node scripts/a11y-audit.mjs"
   },
   "dependencies": {
     "next": "^15.5.20",

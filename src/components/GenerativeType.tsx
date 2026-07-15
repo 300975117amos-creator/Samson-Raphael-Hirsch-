@@ -5,10 +5,12 @@ import styles from "./GenerativeType.module.css";
 
 /**
  * Ambient "world built from words" backdrop: a field of letterforms and verified
- * tokens drifting slowly behind the hero. Purely decorative (aria-hidden), never
- * reduces readability (low opacity, sits behind content), and holds still under
- * reduced motion. Layout is deterministic (index-seeded) for stable hydration —
- * no Math.random, no hydration mismatch.
+ * tokens behind the hero. Rendered as a single decorative SVG (aria-hidden,
+ * role="presentation") — appropriate for background graphics and, being SVG, not
+ * subject to the HTML text-contrast rule (it is intentionally faint and carries
+ * no information; the real content sits above it at full contrast). Holds still
+ * under reduced motion. Layout is deterministic (index-seeded) for stable
+ * hydration — no Math.random, no hydration mismatch.
  */
 
 // Only letters and VERIFIED tokens (no invented quotations).
@@ -18,7 +20,9 @@ const GLYPHS = [
   "1808", "1836", "1851", "1888", "תורה", "Horeb", "Hamburg", "Frankfurt",
 ];
 
-// Simple deterministic pseudo-random from an integer seed.
+const VB_W = 120;
+const VB_H = 70;
+
 function rand(seed: number) {
   const x = Math.sin(seed * 12.9898) * 43758.5453;
   return x - Math.floor(x);
@@ -26,13 +30,11 @@ function rand(seed: number) {
 
 type Frag = {
   text: string;
-  left: number;
-  top: number;
+  x: number;
+  y: number;
   size: number;
   opacity: number;
   rotate: number;
-  delay: number;
-  dur: number;
   hebrew: boolean;
 };
 
@@ -44,13 +46,11 @@ export function GenerativeType({ count = 34 }: { count?: number }) {
       const hebrew = /[֐-׿]/.test(text);
       out.push({
         text,
-        left: rand(i + 1) * 100,
-        top: rand(i + 7) * 100,
-        size: 0.9 + rand(i + 13) * 3.4,
-        opacity: 0.04 + rand(i + 19) * 0.09,
-        rotate: (rand(i + 23) - 0.5) * 24,
-        delay: -rand(i + 29) * 18,
-        dur: 16 + rand(i + 31) * 16,
+        x: rand(i + 1) * VB_W,
+        y: rand(i + 7) * VB_H,
+        size: 1.6 + rand(i + 13) * 4.2,
+        opacity: 0.05 + rand(i + 19) * 0.06,
+        rotate: (rand(i + 23) - 0.5) * 22,
         hebrew,
       });
     }
@@ -58,28 +58,30 @@ export function GenerativeType({ count = 34 }: { count?: number }) {
   }, [count]);
 
   return (
-    <div className={styles.field} aria-hidden="true">
-      {frags.map((f, i) => {
-        const style: React.CSSProperties = {
-          left: `${f.left}%`,
-          top: `${f.top}%`,
-          fontSize: `${f.size}rem`,
-          opacity: f.opacity,
-          animationDelay: `${f.delay}s`,
-          animationDuration: `${f.dur}s`,
-        };
-        // custom property consumed by the keyframes
-        (style as Record<string, string | number>)["--rot"] = `${f.rotate}deg`;
-        return (
-          <span
+    <svg
+      className={styles.field}
+      viewBox={`0 0 ${VB_W} ${VB_H}`}
+      preserveAspectRatio="xMidYMid slice"
+      role="presentation"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <g className={styles.drift}>
+        {frags.map((f, i) => (
+          <text
             key={i}
             className={`${styles.frag} ${f.hebrew ? styles.he : ""}`}
-            style={style}
+            x={f.x}
+            y={f.y}
+            fontSize={f.size}
+            opacity={f.opacity}
+            transform={`rotate(${f.rotate} ${f.x} ${f.y})`}
+            textAnchor="middle"
           >
             {f.text}
-          </span>
-        );
-      })}
-    </div>
+          </text>
+        ))}
+      </g>
+    </svg>
   );
 }

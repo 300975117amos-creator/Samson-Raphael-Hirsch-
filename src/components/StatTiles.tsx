@@ -34,8 +34,10 @@ export function StatTiles() {
       {tiles.map((t) => (
         <div className={styles.tile} key={t.label}>
           <dt className={styles.label}>{t.label}</dt>
-          <dd className={styles.figure}>{t.figure}</dd>
-          <p className={styles.sub}>{t.sub}</p>
+          <dd className={styles.dd}>
+            <span className={styles.figure}>{t.figure}</span>
+            <span className={styles.sub}>{t.sub}</span>
+          </dd>
         </div>
       ))}
     </dl>

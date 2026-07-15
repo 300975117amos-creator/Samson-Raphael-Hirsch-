@@ -29,8 +29,12 @@
   text-transform: uppercase;
   color: var(--muted);
 }
-.figure {
+.dd {
   margin: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+.figure {
   font-family: var(--sans);
   font-weight: 650;
   font-size: clamp(1.5rem, 1rem + 2vw, 2.4rem);
@@ -38,7 +42,6 @@
   line-height: 1;
 }
 .sub {
-  margin: 0;
   font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.35;

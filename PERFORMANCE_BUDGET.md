@@ -45,11 +45,24 @@ All routes are statically prerendered (15/15 pages). Home is at the ceiling of t
 reading-page budget (≤130 kB) mainly due to the client `LivingText` + intro; other
 reading routes sit ~106 kB. No WebGL is loaded anywhere.
 
-### Not yet measured (do not claim)
-- Lighthouse / Core Web Vitals (LCP, CLS, INP) under CPU + network throttling.
-- Real-device mobile timing.
+### 2026-07-15 — Lighthouse (measured, mobile-throttled)
+Tool: Lighthouse 12.2.1, default mobile emulation (Moto G-class, simulated Slow 4G,
+4× CPU throttle), Chromium headless, against the production build (`next start`).
+
+| Page | Perf | A11y | Best-Pr. | SEO | LCP | CLS | TBT |
+|---|---|---|---|---|---|---|---|
+| `/` (home) | **98** | **100** | **96** | **100** | 2.1 s | 0 | 100 ms |
+| `/timeline` | **100** | **100** | — | **100** | 1.9 s | 0 | 60 ms |
+
+Home LCP 2.1 s is within the ≤2.5 s home budget; timeline LCP 1.9 s is within the
+≤2.0 s reading-page budget; CLS 0 beats the budget on both. FCP 0.9 s, Speed Index
+1.0 s (home). These are real runs, re-runnable via the commands in DECISIONS/CI.
+
+### Still to measure
+- INP (field/real-interaction metric; lab TBT is the proxy above).
+- Real-device (non-emulated) timing; more routes.
 
 ## Status
-🟡 Bundle budget measured and within target. Lab performance (Lighthouse CI /
-Playwright tracing under throttling) is the next performance task — no CWV scores
-are claimed until then.
+🟢 Bundle budget and lab performance both measured and within targets (Lighthouse
+Perf 98/100, LCP within budget, CLS 0). Next: INP and additional routes; wire
+Lighthouse into CI for regression tracking.

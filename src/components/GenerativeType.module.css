@@ -1,6 +1,8 @@
 .field {
   position: absolute;
   inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
@@ -10,37 +12,35 @@
 }
 
 .frag {
-  position: absolute;
   font-family: var(--sans);
   font-weight: 650;
-  color: var(--on-surface);
-  transform: rotate(var(--rot));
-  will-change: transform;
-  animation-name: drift;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  fill: var(--on-surface);
   user-select: none;
 }
 .he {
   font-family: var(--hebrew);
 }
 
+/* Whole-field slow drift (cheap; one animation). Disabled under reduced motion. */
+.drift {
+  transform-box: view-box;
+  transform-origin: center;
+  animation: drift 24s ease-in-out infinite alternate;
+}
 @keyframes drift {
   from {
-    transform: translateY(0) rotate(var(--rot));
+    transform: translateY(0);
   }
   to {
-    transform: translateY(-14px) rotate(var(--rot));
+    transform: translateY(-2px);
   }
 }
 
-/* Reduced motion: hold still (both media query and manual toggle). */
 @media (prefers-reduced-motion: reduce) {
-  .frag {
+  .drift {
     animation: none;
   }
 }
-:global(:root[data-motion="reduced"]) .frag {
+:global(:root[data-motion="reduced"]) .drift {
   animation: none;
 }

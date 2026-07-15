@@ -60,6 +60,20 @@ of issues — manual + AT review are required, not optional.
   `aria-hidden`; a visible caption repeats the "not a photograph" disclosure.
 - Status/identity never by color alone (shape + text throughout).
 
+### 2026-07-15 — In-browser axe audit (measured) + Lighthouse a11y
+- **axe-core in real Chromium** (`scripts/a11y-audit.mjs`), WCAG 2a/2aa/21a/21aa,
+  full ruleset incl. color-contrast, across `/`, `/who`, `/timeline`, `/works`,
+  `/works/[id]`, `/concepts`, `/method`: **0 serious/critical violations, 0
+  violations total** (after fixes below).
+- **Fixes made from this audit:** (1) the decorative word-field was re-rendered as
+  an SVG `role="presentation"` so its intentionally-faint text is not evaluated by
+  the HTML text-contrast rule (color-contrast × 4 resolved); (2) `StatTiles` `<dl>`
+  restructured so each group holds only `<dt>`/`<dd>` (definition-list resolved).
+- **Lighthouse accessibility category: 100** on `/` and `/timeline`.
+- **Still manual (not automated):** screen-reader pass (NVDA/VoiceOver),
+  full keyboard walkthrough of every control, zoom-to-200% reflow. Automated tools
+  catch ~a third of issues; these remain required before a conformance claim.
+
 ### Not yet done (top accessibility tasks)
 - In-browser `axe` run (real color-contrast + full ruleset) via Playwright.
 - Manual keyboard walkthrough of every interactive element and focus order.
