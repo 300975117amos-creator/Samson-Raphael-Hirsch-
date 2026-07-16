@@ -34,10 +34,11 @@ ready / published. **Publication state:** none until the historical page workflo
 These pages exist as **prototype scaffolds** (Direction B) with verified/labeled
 content — not yet through the full historical-page review workflow, so their
 **publication state remains "none":** Home (#1), Who Was Rabbi Hirsch? (#2, short),
-Life & Timeline (#3), Major Works (#5), The Nineteen Letters + other work details
-(#6–9 via `/works/[id]`), Ideas/Torah im Derech Eretz (#10, #13 via concepts),
-Editorial Method (#16). Remaining launch pages (#4, #11, #12, #14, #15, #17–20)
-are still **proposed**. Publishing any of these requires completing
+Life & Timeline (#3), His Historical World (#4, `/world` — with sourced context
+and an editorial-interpretation-labeled framing), Major Works (#5), The Nineteen
+Letters + other work details (#6–9 via `/works/[id]`), Ideas/Torah im Derech Eretz
+(#10, #13 via concepts), Editorial Method (#16). Remaining launch pages (#11, #12,
+#14, #15, #17–20) are still **proposed**. Publishing any of these requires completing
 `EDITORIAL_POLICY.md` §7.
 
 ## Notes per required field (applies to every entry when it advances)

@@ -1,0 +1,123 @@
+.wrap {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.laneLabels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.band {
+  position: relative;
+  border: 1px solid var(--hair);
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  background: color-mix(in srgb, var(--accent) 2%, var(--surface));
+  overflow: hidden;
+}
+
+.laneTop,
+.laneBottom {
+  position: relative;
+  block-size: 4.2rem;
+}
+
+.spine {
+  position: relative;
+  block-size: 1.6rem;
+  border-block: 1px solid var(--hair);
+  margin-block: 0.2rem;
+}
+.tick {
+  position: absolute;
+  transform: translateX(-50%);
+  inset-block-start: 50%;
+  translate: 0 -50%;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+  background: var(--surface);
+  padding-inline: 0.25rem;
+}
+
+.marker {
+  position: absolute;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem;
+  inline-size: max-content;
+  max-inline-size: 8rem;
+}
+.marker[data-side="top"] {
+  inset-block-end: 0;
+}
+.marker[data-side="bottom"] {
+  inset-block-start: 0;
+}
+
+.dot {
+  inline-size: 0.7rem;
+  block-size: 0.7rem;
+  border-radius: 999px;
+  background: var(--on-surface);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--hair);
+}
+.marker[data-side="top"] .dot {
+  order: 2;
+}
+.marker[data-active="true"] .dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.mYear {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--muted);
+}
+.marker[data-active="true"] .mYear {
+  color: var(--accent);
+}
+
+.readout {
+  min-block-size: 4rem;
+}
+.detail {
+  display: grid;
+  gap: 0.5rem;
+}
+.detailTitle {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  font-size: 1.15rem;
+}
+.detailYear {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.detailDesc {
+  margin: 0;
+  max-inline-size: 62ch;
+}
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

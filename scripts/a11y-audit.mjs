@@ -17,6 +17,7 @@ const routes = [
   "/",
   "/who",
   "/timeline",
+  "/world",
   "/works",
   "/works/nineteen-letters",
   "/concepts",

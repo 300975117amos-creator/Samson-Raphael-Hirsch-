@@ -4,6 +4,7 @@ import { works } from "@/content/works";
 import { concepts } from "@/content/concepts";
 import { morphPhrases } from "@/content/living-text";
 import { journey } from "@/content/geo";
+import { worldTimeline } from "@/content/world";
 import { sources, sourceById } from "@/content/sources";
 
 /**
@@ -29,6 +30,7 @@ describe("content loads and validates", () => {
 describe("referential integrity: every claim cites a registered source", () => {
   const claimBearing = [
     ...timeline.map((e) => ({ kind: "timeline", id: e.id, sources: e.sources })),
+    ...worldTimeline.map((e) => ({ kind: "world", id: e.id, sources: e.sources })),
     ...works.map((w) => ({ kind: "work", id: w.id, sources: w.sources })),
     ...concepts.map((c) => ({ kind: "concept", id: c.id, sources: c.sources })),
     ...morphPhrases.map((m) => ({ kind: "morph", id: m.id, sources: m.sources })),

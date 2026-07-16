@@ -15,8 +15,9 @@ export const site = {
     { href: "/", label: "Home", chapter: "00" },
     { href: "/who", label: "Who Was Rabbi Hirsch?", chapter: "01" },
     { href: "/timeline", label: "Life & Timeline", chapter: "02" },
-    { href: "/works", label: "Major Works", chapter: "03" },
-    { href: "/concepts", label: "Ideas", chapter: "04" },
-    { href: "/method", label: "Editorial Method", chapter: "05" },
+    { href: "/world", label: "His Historical World", chapter: "03" },
+    { href: "/works", label: "Major Works", chapter: "04" },
+    { href: "/concepts", label: "Ideas", chapter: "05" },
+    { href: "/method", label: "Editorial Method", chapter: "06" },
   ],
 } as const;

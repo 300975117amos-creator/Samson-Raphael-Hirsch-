@@ -126,6 +126,37 @@ this project's editorial rating, not the source's self-description.
 
 ---
 
+## Historical-context sources (for "His Historical World") — added 2026-07-15
+
+### SRC-018 — Jewish Virtual Library: "Emancipation"
+- **Institution:** Jewish Virtual Library · **Type:** Reference article · **Language:** English
+- **URL:** https://www.jewishvirtuallibrary.org/emancipation · **Reliability:** Medium
+- **Topics:** Jewish emancipation timeline in the German states (1861–1871).
+- **Date accessed:** 2026-07-15 · **Status:** ✅ (emancipation dates corroborated by SRC-019)
+
+### SRC-019 — Wikipedia: "Jewish emancipation"
+- **Institution:** Wikipedia · **Type:** Encyclopedia (lead only) · **Reliability:** Low
+- **URL:** https://en.wikipedia.org/wiki/Jewish_emancipation · **Status:** ✅ (corroborates SRC-018)
+
+### SRC-020 — Encyclopedia.com: "Rabbinical Conferences"
+- **Institution:** Encyclopedia.com · **Type:** Encyclopedia · **Reliability:** Medium
+- **URL:** https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/rabbinical-conferences
+- **Topics:** Reform rabbinical conferences (Brunswick 1844, Frankfurt 1845, Breslau 1846).
+- **Date accessed:** 2026-07-15 · **Status:** ✅ (corroborated by Jewish Encyclopedia)
+
+### SRC-021 — Wikipedia: "Hamburg Temple"
+- **Institution:** Wikipedia · **Type:** Encyclopedia (lead only) · **Reliability:** Low
+- **URL:** https://en.wikipedia.org/wiki/Hamburg_Temple
+- **Topics:** dedication of the Hamburg Temple, 18 Oct 1818; first permanent Reform congregation.
+- **Date accessed:** 2026-07-15 · **Status:** ✅ (corroborated by keydocuments.net)
+
+### SRC-022 — Encyclopedia.com: "Hirsch, Samson (ben) Raphael"
+- **Institution:** Encyclopedia.com · **Type:** Encyclopedia · **Reliability:** Medium
+- **URL:** https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/hirsch-samson-ben-raphael
+- **Topics:** Austrittsgesetz 1876 (Lasker), Hirsch's advocacy, IRG ~500 families,
+  the secession controversy with S. B. Bamberger.
+- **Date accessed:** 2026-07-15 · **Status:** ✅ (Austritt 1876 corroborated by SRC-001)
+
 ## Corroborated facts (from ≥2 sources above) — safe to build chronology on
 
 - ✅ Born **20 June 1808, Hamburg**.

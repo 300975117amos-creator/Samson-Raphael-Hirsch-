@@ -4,6 +4,26 @@ All notable changes to this project. Dates in ISO 8601.
 
 ## [Unreleased]
 
+### 2026-07-15 — "His Historical World" (sourced context + dual-lane graphic)
+- **Researched & sourced** (web search) the surrounding-world context: Hamburg
+  Temple (1818), Reform rabbinical conferences (1844–46), Jewish emancipation in
+  the German states (1867–71), and Prussia's Law of Secession / Austrittsgesetz
+  (1876). Added SRC-018…022 to `SOURCE_REGISTRY.md` and the runtime source map.
+- **Added** `src/content/world.ts` — the context events + Hirsch's own anchors,
+  each a sourced historical fact (referential-integrity test extended to cover it).
+- **Added** `HistoricalWorld` — an original dual-lane infographic ("two worlds, one
+  binding"): the surrounding world above the spine, Hirsch below, aligned by year;
+  keyboard-operable markers, sourced detail on select, `aria-live` readout.
+- **Added** the `/world` page (launch page #4) with the graphic and an explicitly
+  **editorial-interpretation-labeled** framing paragraph; added it to navigation
+  (chapters renumbered).
+- **Verified:** `tsc` 0 · `vitest` 12/12 · `next build` 16/16 pages · axe **0
+  violations across all 8 routes** (incl. `/world`) · screenshot reviewed
+  (fixed a marker-label collision).
+- Portrait: Wikimedia/archive.org still network-blocked in this session, so the
+  Schier 1847 image can't be verified/wired here yet (policy change applies to a
+  new session; or upload the file). Typographic plate remains the stand-in.
+
 ### 2026-07-15 — Measured accessibility & performance (real audits)
 - **Added** `scripts/a11y-audit.mjs` — in-browser **axe-core** audit across 7
   routes (WCAG 2a/2aa/21a/21aa, full ruleset incl. color-contrast). `npm run
